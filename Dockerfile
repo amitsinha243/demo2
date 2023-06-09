@@ -9,7 +9,7 @@ RUN mvn clean package -DskipTests
 #Package Stage
 #
 FROM openjdk:18
-COPY --from=build /target/gcp-0.0.1-SNAPSHOT.jar gcp-0.0.1-SNAPSHOT.jar
+COPY --from=build /target/gcp-0.0.1-SNAPSHOT.jar gcp.jar
 #ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["java","jar","gcp-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","gcp.jar"]
